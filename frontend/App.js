@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -8,8 +10,9 @@ import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
 
 const App = () => {
-  const [coinData, setCoinData] = useState([]);
-  const [geceModu, setGeceModu] = useState(false);
+  
+  const [coinData, setCoinData] = localStorageKullan("coin", []);
+  const [geceModu, setGeceModu] = geceModuAc();
 
   useEffect(() => {
     axios
@@ -28,6 +31,8 @@ const App = () => {
 };
 
 export default App;
+
+
 
 
 
